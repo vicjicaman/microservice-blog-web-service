@@ -26,23 +26,18 @@ spec:
               name: HOST
               value: '${HOST@microservice-config}'
             -
-              name: BASE_ROUTE_APP
+              name: BLOG_BASE_ROUTE_APP
               value: '${BASE_ROUTE_APP@microservice-blog-config}'
             -
-              name: INTERNAL_PORT_APP
+              name: BLOG_INTERNAL_PORT_APP
               value: '${INTERNAL_PORT_APP@microservice-blog-config}'
             -
-              name: EXTERNAL_URL_GRAPH
-              value: '${EXTERNAL_URL_GRAPH@microservice-blog-config}'
+              name: BLOG_EXTERNAL_URL_GRAPH
+              value: 'http://${EXTERNAL_URL_GRAPH@microservice-blog-config}'
             -
-              name: EXTERNAL_URL_EVENTS
-              value: '${EXTERNAL_URL_EVENTS@microservice-blog-config}'
-            -
-              name: INTERNAL_URL_GRAPH
-              value: '${INTERNAL_URL_GRAPH@microservice-blog-config}'
-            -
-              name: INTERNAL_URL_EVENTS
-              value: '${INTERNAL_URL_EVENTS@microservice-blog-config}'
+              name: BLOG_INTERNAL_URL_GRAPH
+              value: 'http://${INTERNAL_URL_GRAPH@microservice-blog-config}'
+
           ports:
             -
               containerPort: '${INTERNAL_PORT_APP@microservice-blog-config}'

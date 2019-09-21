@@ -26,23 +26,17 @@ spec:
               name: HOST
               value: www.repoflow.com
             -
-              name: BASE_ROUTE_APP
+              name: BLOG_BASE_ROUTE_APP
               value: /blog
             -
-              name: INTERNAL_PORT_APP
+              name: BLOG_INTERNAL_PORT_APP
               value: '3000'
             -
-              name: EXTERNAL_URL_GRAPH
-              value: www.repoflow.com/blog/backend/graphql
+              name: BLOG_EXTERNAL_URL_GRAPH
+              value: 'http://www.repoflow.com/blog/backend/graphql'
             -
-              name: EXTERNAL_URL_EVENTS
-              value: www.repoflow.com/blog/backend/events
-            -
-              name: INTERNAL_URL_GRAPH
-              value: 'blog-graph-service.microservices-namespace:4000/blog/backend/graphql'
-            -
-              name: INTERNAL_URL_EVENTS
-              value: 'blog-graph-service.microservices-namespace:4000/blog/backend/events'
+              name: BLOG_INTERNAL_URL_GRAPH
+              value: 'http://blog-graph-service.microservices-namespace:4000/blog/backend/graphql'
           ports:
             -
               containerPort: 3000
