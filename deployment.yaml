@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '${DEPLOYMENT_WEB@microservice-blog-config}'
+  namespace: '${NAMESPACE@microservice-config}'
+  labels:
+    app: '${DEPLOYMENT_WEB@microservice-blog-config}'
+    moduleid: microservice-blog-web-service
+    version: 1.70.0-master
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: '${DEPLOYMENT_WEB@microservice-blog-config}'
+  template:
+    metadata:
+      labels:
+        app: '${DEPLOYMENT_WEB@microservice-blog-config}'
+    spec:
+      containers:
+        -
+          name: app
+          image: 'repoflow/microservice-blog-web-container:1.70.0-master'
+          env:
+            -
+              name: HOST
+              value: '${HOST@microservice-config}'
+            -
+              name: BLOG_BASE_ROUTE_APP
+              value: '${BASE_ROUTE_APP@microservice-blog-config}'
+            -
+              name: BLOG_INTERNAL_PORT_APP
+              value: '${INTERNAL_PORT_APP@microservice-blog-config}'
+            -
+              name: BLOG_EXTERNAL_URL_GRAPH
+              value: 'http://${EXTERNAL_URL_GRAPH@microservice-blog-config}'
+            -
+              name: BLOG_INTERNAL_URL_GRAPH
+              value: 'http://${INTERNAL_URL_GRAPH@microservice-blog-config}'
+            -
+              name: RESOURCES_BASE_ROUTE
+              value: '${BASE_ROUTE@microservice-resources-config}'
+          ports:
+            -
+              containerPort: '${INTERNAL_PORT_APP@microservice-blog-config}'
