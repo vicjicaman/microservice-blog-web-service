@@ -37,6 +37,9 @@ spec:
             -
               name: BLOG_INTERNAL_URL_GRAPH
               value: 'http://blog-graph-service.microservices-namespace:4000/blog/backend/graphql'
+            -
+              name: RESOURCES_BASE_ROUTE
+              value: /resources
           ports:
             -
               containerPort: 3000

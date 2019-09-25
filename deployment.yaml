@@ -37,6 +37,9 @@ spec:
             -
               name: BLOG_INTERNAL_URL_GRAPH
               value: 'http://${INTERNAL_URL_GRAPH@microservice-blog-config}'
+            -
+              name: RESOURCES_BASE_ROUTE
+              value: '${BASE_ROUTE@microservice-resources-config}'
           ports:
             -
               containerPort: '${INTERNAL_PORT_APP@microservice-blog-config}'
