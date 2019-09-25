@@ -6,7 +6,7 @@
     },
     "microservice-blog-config": {
       "url": "github.com:vicjicaman/microservice-blog-config.git",
-      "version": "1.70.5-blog-home-prod"
+      "version": "1.70.0-master"
     },
     "microservice-resources-config": {
       "url": "github.com:vicjicaman/microservice-resources-config.git",
